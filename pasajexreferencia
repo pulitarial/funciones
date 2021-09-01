@@ -3,28 +3,31 @@
 
 const int numero_inicial= 123456;
 
-void cambiar_munero (int *num_telefono){
-    int dato_bool= 1;
-    bool cambia_o_no= false;
-    printf("Desea cambiar su telefono? 1 para si o 0 para no\n");
-    scanf ("%i", &dato_bool);
-    cambia_o_no= dato_bool;
-    if (dato_bool){
+int cambiar_munero (int *num_telefono){
         printf("Ingrese su nuevo numero\n");
         scanf("%i", num_telefono);
-        printf("Se ha registrado %i como su nuevo telefono\n", *num_telefono);
-    }else {
-        printf("se conservara %i como su telefono\n", *num_telefono );
-    }
-}
+        
+        return num_telefono;
+        }
+
 
 int main(){
     int num_telefono= numero_inicial;
+    int dato_bool= 1;
+    bool cambia_o_no= false;
     
 
     printf("su telefono es %i\n", num_telefono);
 
-    cambiar_munero(&num_telefono);
+    printf("Desea cambiar su telefono? 1 para si o 0 para no\n");
+    scanf ("%i", &dato_bool);
+    cambia_o_no= dato_bool;
+    if (cambia_o_no){
+        cambiar_munero (&num_telefono);
+        printf("Se ha registrado %i como su nuevo telefono\n", num_telefono);
+    }else {
+        printf("se conservara %i como su telefono\n", num_telefono );
+    }
     
     
     return 0;
